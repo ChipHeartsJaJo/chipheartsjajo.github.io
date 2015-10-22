@@ -11,7 +11,7 @@
 var Lilac;
 
 (function ($) {
-    "use strict";
+    // "use strict";
 
     $(document).ready(function () {
 
