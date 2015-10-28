@@ -1,3 +1,14 @@
 .invite .invite_authors {
   font-size: 92pt;
 }
+.bridesmaids-groomsmen-slider .item {
+  width: 200px;
+}
+.bridesmaids-groomsmen-slider .item .image {
+  max-height: 200px;
+}
+.bridesmaids-groomsmen-slider .item .image .info h3 {
+  color: #ad9fb3;
+  margin-top: 70px;
+  font-size: 16pt;
+}
