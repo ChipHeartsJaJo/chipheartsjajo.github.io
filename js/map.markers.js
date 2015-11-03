@@ -7,8 +7,17 @@ var map_markers = [
 		"longitude":-77.067272,
 		"icon":"fa-bell-o", //Check the full list of icons at http://fortawesome.github.io/Font-Awesome/icons/
 		"infoWindow":"Woodend Sanctuary <br> 8940 Jones Mill Road, Chevy Chase, MD"
+	},
+	{
+		"title": "Reception",
+		"latitude":38.960383,
+		"longitude":-77.084777,
+		"icon":"fa-bed", //Check the full list of icons at http://fortawesome.github.io/Font-Awesome/icons/
+		"infoWindow":"Embassy Suites at the Chevy Chase Pavilion <br> 4300 Military Rd NW, Washington, DC 20015"
 	}
 ];
+
+
 
 // var map_markers = [
 // 	{

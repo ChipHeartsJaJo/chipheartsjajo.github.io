@@ -31,6 +31,9 @@ $(function($) {
     slides: [ // Slideshow Images
       {
         image: 'images/palmtree.jpg'
+      },
+      {
+        image: 'images/us-1.jpg'
       }
     ]
   });
