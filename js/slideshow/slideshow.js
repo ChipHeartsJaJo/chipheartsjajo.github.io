@@ -30,10 +30,7 @@ $(function($) {
     slide_links: 'false',
     slides: [ // Slideshow Images
       {
-        image: 'images/palmtree.jpg'
-      },
-      {
-        image: 'images/us-1.jpg'
+        image: 'images/shoes.jpg'
       }
     ]
   });
