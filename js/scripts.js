@@ -529,44 +529,44 @@ var Lilac;
 
       getLatestTweets: function() {
 
-        var $tis = this;
-
-        $('.tweet').html('<div class="heartbeat"></div>');
-
-        var twitterBox = document.createElement('div');
-        twitterBox.setAttribute('id', 'twitter-box');
-
-        $('body').append(twitterBox);
-
-        $("#twitter-box").css({
-          display: 'none'
-        });
-
-        try {
-          $("#twitter-box").tweet({
-            username: $tis.twitter_username,
-            modpath: 'twitter/',
-            count: 8,
-            loading_text: 'Loading tweets...',
-            template: '<h3>{screen_name}</h3><div class="info"><a href="http://twitter.com/{screen_name}" target="_blank">@{screen_name}</a> | <a href="http://twitter.com/{screen_name}/statuses/{tweet_id}/" target="_blank" class="time">{tweet_relative_time}</a></div><div>{text}</div>'
-          });
-        } catch (err) {
-          console.log("Your twitter account is misconfigured. " + err);
-        }
-
-        var index = 0,
-          len = $(".tweet").length;
-
-        $("#twitter-box li").each(function() {
-          if (index < len) {
-            $(".tweet").eq(index).html($(this).html());
-            index += 1;
-          } else {
-            return false;
-          }
-        });
-
-        $("#twitter-box").remove();
+        // var $tis = this;
+        //
+        // $('.tweet').html('<div class="heartbeat"></div>');
+        //
+        // var twitterBox = document.createElement('div');
+        // twitterBox.setAttribute('id', 'twitter-box');
+        //
+        // $('body').append(twitterBox);
+        //
+        // $("#twitter-box").css({
+        //   display: 'none'
+        // });
+        //
+        // try {
+        //   $("#twitter-box").tweet({
+        //     username: $tis.twitter_username,
+        //     modpath: 'twitter/',
+        //     count: 8,
+        //     loading_text: 'Loading tweets...',
+        //     template: '<h3>{screen_name}</h3><div class="info"><a href="http://twitter.com/{screen_name}" target="_blank">@{screen_name}</a> | <a href="http://twitter.com/{screen_name}/statuses/{tweet_id}/" target="_blank" class="time">{tweet_relative_time}</a></div><div>{text}</div>'
+        //   });
+        // } catch (err) {
+        //   console.log("Your twitter account is misconfigured. " + err);
+        // }
+        //
+        // var index = 0,
+        //   len = $(".tweet").length;
+        //
+        // $("#twitter-box li").each(function() {
+        //   if (index < len) {
+        //     $(".tweet").eq(index).html($(this).html());
+        //     index += 1;
+        //   } else {
+        //     return false;
+        //   }
+        // });
+        //
+        // $("#twitter-box").remove();
       },
 
       getInstagram: function() {
@@ -809,7 +809,7 @@ var Lilac;
       },
 
       contactForm: function() {
-        // 
+        //
         // var $tis = this;
         //
         // $(".submit_form").on('click', function(e) {
