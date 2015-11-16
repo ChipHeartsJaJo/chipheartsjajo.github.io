@@ -809,164 +809,164 @@ var Lilac;
       },
 
       contactForm: function() {
-
-        var $tis = this;
-
-        $(".submit_form").on('click', function(e) {
-          e.preventDefault();
-
-          var $submit_btn = $(this),
-            $form = $submit_btn.closest("form"),
-            $fields = $("input, textarea, .radio-lilac", $form),
-            len = 0,
-            re = /\S+@\S+\.\S+/,
-            html = "contact",
-            error = false,
-            showError,
-            showSuccess,
-            stopSpin,
-            spinIcon = [];
-
-          $fields.each(function() {
-            var $field = $(this);
-
-            if ($field.attr('type') === "hidden") {
-              if ($field.hasClass('subject')) {
-                html += "&subject=" + $field.val();
-              } else if ($field.hasClass('fromName') || $field.hasClass('fromname')) {
-                html += "&fromname=" + $field.val();
-              } else if ($field.hasClass('fromEmail') || $field.hasClass('fromemail')) {
-                html += "&fromemail=" + $field.val();
-              } else if ($field.hasClass('emailTo') || $field.hasClass('emailto')) {
-                html += "&emailto=" + $field.val();
-              }
-            } else {
-              if ($field.hasClass('required') && $field.val() === "") {
-                $field.addClass('invalid');
-                error = true;
-              } else if ($field.attr('type') === "email" && $field.val() !== "" && re.test($field.val()) === false) {
-                $field.addClass('invalid');
-                error = true;
-              } else if ($field.attr('id') !== "recaptcha_response_field") {
-                $field.removeClass('invalid');
-                if ($field.hasClass('subject')) {
-                  html += "&subject=" + $field.val();
-                  html += "&subject_label=" + $field.attr("name");
-                } else if ($field.hasClass('fromName') || $field.hasClass('fromname')) {
-                  html += "&fromname=" + $field.val();
-                  html += "&fromname_label=" + $field.attr("name");
-                } else if ($field.hasClass('fromEmail') || $field.hasClass('fromemail')) {
-                  html += "&fromemail=" + $field.val();
-                  html += "&fromemail_label=" + $field.attr("name");
-                } else if ($field.hasClass('radio-lilac')) {
-                  html += "&field" + len + "_label=" + $field.data("value");
-                  html += "&field" + len + "_value=" + $('.active', $field).data("value");
-                  len += 1;
-                } else {
-                  html += "&field" + len + "_label=" + $field.attr("name");
-                  html += "&field" + len + "_value=" + $field.val();
-                  len += 1;
-                }
-              }
-            }
-          });
-
-          html += "&len=" + len;
-
-          showError = function() {
-            $submit_btn.width($submit_btn.width());
-
-            $('i', $submit_btn).each(function() {
-              var $icon = $(this),
-                iClass = $icon.attr("class");
-
-              $icon.removeClass(iClass).addClass('fa fa-times').delay(1500).queue(function(next) {
-                $(this).removeClass('fa fa-times').addClass(iClass);
-                next();
-              });
-            });
-
-            $submit_btn.addClass('btn-danger').delay(1500).queue(function(next) {
-              $(this).removeClass('btn-danger');
-              next();
-            });
-
-            $(".form_status_message").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + contact_form_error_msg + '</div>');
-          };
-
-          showSuccess = function() {
-            $submit_btn.width($submit_btn.width());
-
-            $('i', $submit_btn).each(function() {
-              var $icon = $(this),
-                iClass = $icon.attr("class");
-
-              $icon.removeClass(iClass).addClass('fa fa-check').delay(1500).queue(function(next) {
-                $(this).removeClass('fa fa-check').addClass(iClass);
-                next();
-              });
-            });
-
-            $submit_btn.addClass('btn-success').delay(1500).queue(function(next) {
-              $(this).removeClass('btn-success');
-              next();
-            });
-
-            $(".form_status_message").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + contact_form_success_msg + '</div>');
-          };
-
-          stopSpin = function() {
-            $('i', $submit_btn).each(function(i) {
-              var $icon = $(this);
-
-              $icon.removeClass('fa fa-cog fa-spin').addClass(spinIcon[i]);
-            });
-
-            $submit_btn.removeClass('disabled');
-          };
-
-          if (!error && !$tis.sendingMail) {
-            $tis.sendingMail = true;
-
-            $('i', $submit_btn).each(function(i) {
-              var $icon = $(this);
-
-              spinIcon[i] = $icon.attr("class");
-
-              $icon.removeClass(spinIcon[i]).addClass('fa fa-cog fa-spin');
-            });
-            $submit_btn.addClass('disabled');
-
-            $.ajax({
-              type: 'POST',
-              url: 'contact.php',
-              data: html,
-              success: function(msg) {
-                stopSpin();
-
-                if (msg === 'ok') {
-                  showSuccess();
-                  $form[0].reset();
-                } else {
-                  showError();
-                }
-
-                $tis.sendingMail = false;
-              },
-              error: function() {
-                stopSpin();
-
-                showError();
-                $tis.sendingMail = false;
-              }
-            });
-
-          } else {
-            showError();
-          }
-
-          return false;
-        });
+        // 
+        // var $tis = this;
+        //
+        // $(".submit_form").on('click', function(e) {
+        //   e.preventDefault();
+        //
+        //   var $submit_btn = $(this),
+        //     $form = $submit_btn.closest("form"),
+        //     $fields = $("input, textarea, .radio-lilac", $form),
+        //     len = 0,
+        //     re = /\S+@\S+\.\S+/,
+        //     html = "contact",
+        //     error = false,
+        //     showError,
+        //     showSuccess,
+        //     stopSpin,
+        //     spinIcon = [];
+        //
+        //   $fields.each(function() {
+        //     var $field = $(this);
+        //
+        //     if ($field.attr('type') === "hidden") {
+        //       if ($field.hasClass('subject')) {
+        //         html += "&subject=" + $field.val();
+        //       } else if ($field.hasClass('fromName') || $field.hasClass('fromname')) {
+        //         html += "&fromname=" + $field.val();
+        //       } else if ($field.hasClass('fromEmail') || $field.hasClass('fromemail')) {
+        //         html += "&fromemail=" + $field.val();
+        //       } else if ($field.hasClass('emailTo') || $field.hasClass('emailto')) {
+        //         html += "&emailto=" + $field.val();
+        //       }
+        //     } else {
+        //       if ($field.hasClass('required') && $field.val() === "") {
+        //         $field.addClass('invalid');
+        //         error = true;
+        //       } else if ($field.attr('type') === "email" && $field.val() !== "" && re.test($field.val()) === false) {
+        //         $field.addClass('invalid');
+        //         error = true;
+        //       } else if ($field.attr('id') !== "recaptcha_response_field") {
+        //         $field.removeClass('invalid');
+        //         if ($field.hasClass('subject')) {
+        //           html += "&subject=" + $field.val();
+        //           html += "&subject_label=" + $field.attr("name");
+        //         } else if ($field.hasClass('fromName') || $field.hasClass('fromname')) {
+        //           html += "&fromname=" + $field.val();
+        //           html += "&fromname_label=" + $field.attr("name");
+        //         } else if ($field.hasClass('fromEmail') || $field.hasClass('fromemail')) {
+        //           html += "&fromemail=" + $field.val();
+        //           html += "&fromemail_label=" + $field.attr("name");
+        //         } else if ($field.hasClass('radio-lilac')) {
+        //           html += "&field" + len + "_label=" + $field.data("value");
+        //           html += "&field" + len + "_value=" + $('.active', $field).data("value");
+        //           len += 1;
+        //         } else {
+        //           html += "&field" + len + "_label=" + $field.attr("name");
+        //           html += "&field" + len + "_value=" + $field.val();
+        //           len += 1;
+        //         }
+        //       }
+        //     }
+        //   });
+        //
+        //   html += "&len=" + len;
+        //
+        //   showError = function() {
+        //     $submit_btn.width($submit_btn.width());
+        //
+        //     $('i', $submit_btn).each(function() {
+        //       var $icon = $(this),
+        //         iClass = $icon.attr("class");
+        //
+        //       $icon.removeClass(iClass).addClass('fa fa-times').delay(1500).queue(function(next) {
+        //         $(this).removeClass('fa fa-times').addClass(iClass);
+        //         next();
+        //       });
+        //     });
+        //
+        //     $submit_btn.addClass('btn-danger').delay(1500).queue(function(next) {
+        //       $(this).removeClass('btn-danger');
+        //       next();
+        //     });
+        //
+        //     $(".form_status_message").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + contact_form_error_msg + '</div>');
+        //   };
+        //
+        //   showSuccess = function() {
+        //     $submit_btn.width($submit_btn.width());
+        //
+        //     $('i', $submit_btn).each(function() {
+        //       var $icon = $(this),
+        //         iClass = $icon.attr("class");
+        //
+        //       $icon.removeClass(iClass).addClass('fa fa-check').delay(1500).queue(function(next) {
+        //         $(this).removeClass('fa fa-check').addClass(iClass);
+        //         next();
+        //       });
+        //     });
+        //
+        //     $submit_btn.addClass('btn-success').delay(1500).queue(function(next) {
+        //       $(this).removeClass('btn-success');
+        //       next();
+        //     });
+        //
+        //     $(".form_status_message").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + contact_form_success_msg + '</div>');
+        //   };
+        //
+        //   stopSpin = function() {
+        //     $('i', $submit_btn).each(function(i) {
+        //       var $icon = $(this);
+        //
+        //       $icon.removeClass('fa fa-cog fa-spin').addClass(spinIcon[i]);
+        //     });
+        //
+        //     $submit_btn.removeClass('disabled');
+        //   };
+        //
+        //   if (!error && !$tis.sendingMail) {
+        //     $tis.sendingMail = true;
+        //
+        //     $('i', $submit_btn).each(function(i) {
+        //       var $icon = $(this);
+        //
+        //       spinIcon[i] = $icon.attr("class");
+        //
+        //       $icon.removeClass(spinIcon[i]).addClass('fa fa-cog fa-spin');
+        //     });
+        //     $submit_btn.addClass('disabled');
+        //
+        //     $.ajax({
+        //       type: 'POST',
+        //       url: 'contact.php',
+        //       data: html,
+        //       success: function(msg) {
+        //         stopSpin();
+        //
+        //         if (msg === 'ok') {
+        //           showSuccess();
+        //           $form[0].reset();
+        //         } else {
+        //           showError();
+        //         }
+        //
+        //         $tis.sendingMail = false;
+        //       },
+        //       error: function() {
+        //         stopSpin();
+        //
+        //         showError();
+        //         $tis.sendingMail = false;
+        //       }
+        //     });
+        //
+        //   } else {
+        //     showError();
+        //   }
+        //
+        //   return false;
+        // });
       },
 
       buttons: function() {
