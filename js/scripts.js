@@ -155,7 +155,7 @@ var Lilac;
         /**
          * Contact form submit
          */
-        $tis.contactForm();
+        // $tis.contactForm();
 
         /**
          * Capture buttons click event

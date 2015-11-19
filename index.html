@@ -657,10 +657,10 @@
 										<button class="btn btn-default" data-value="no"><i class="fa fa-frown-o"></i>No</button>
 									</div> -->
 									<div class="col-sm-6">
-										<input type="text" id="input_name" name="Name" placeholder="YOUR NAME" class="form-control required fromName" />
+										<input type="text" id="input_name" name="Name" placeholder="YOUR NAME" class="form-control fromName" />
 									</div>
 									<div class="col-sm-6">
-										<input type="email" id="input_email" name="Email" placeholder="YOUR EMAIL" class="form-control required fromEmail" />
+										<input type="email" id="input_email" name="Email" placeholder="YOUR EMAIL" class="form-control fromEmail" />
 									</div>
 								</section>
 
@@ -693,7 +693,8 @@
 							</div>
 
 							<div class="center">
-								<button onClick="submitForm()" class="btn ribbon btn-color submit_form">
+								<!-- <button onClick="submitForm()" class="btn ribbon btn-color submit_form"> -->
+								<button onClick="submitForm()" class="btn ribbon btn-color">
 									<span class="line_above"></span><i class="icon icon-arrow-right"></i>Submit<i class="icon icon-arrow-left"></i></button>
 							</div>
 						</form>
@@ -880,22 +881,26 @@
 
 	<!-- Parse JS SDK -->
 	<script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script>
-
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
 	<script src="js/messages.js"></script>
 
-	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 	<script>
-		// var _gaq = [
-		// 	['_setAccount', 'UA-XXXXX-X'],
-		// 	['_trackPageview']
-		// ];
-		// (function(d, t) {
-		// 	var g = d.createElement(t),
-		// 		s = d.getElementsByTagName(t)[0];
-		// 	g.src = '//www.google-analytics.com/ga.js';
-		// 	s.parentNode.insertBefore(g, s)
-		// }(document, 'script'));
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-70351017-1', 'auto');
+		ga('send', 'pageview');
 	</script>
+
 </body>
 
 </html>
