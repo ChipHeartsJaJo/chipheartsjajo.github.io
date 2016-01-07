@@ -8,16 +8,10 @@ var map_markers = [{
   "infoWindow": "Woodend Sanctuary <br> 8940 Jones Mill Road, Chevy Chase, MD"
 }, {
   "title": "Reception",
-  "latitude": 38.960383,
-  "longitude": -77.084777,
+  "latitude": 38.9912331,
+  "longitude": -77.0984147,
   "icon": "fa-bed", //Check the full list of icons at http://fortawesome.github.io/Font-Awesome/icons/
-  "infoWindow": "Embassy Suites at the Chevy Chase Pavilion <br> 4300 Military Rd NW, Washington, DC 20015"
-}, {
-  "title": "Reception",
-  "latitude": 38.964822,
-  "longitude": -77.087785,
-  "icon": "fa-bed", //Check the full list of icons at http://fortawesome.github.io/Font-Awesome/icons/
-  "infoWindow": "Courtyard Chevy Chase <br> 5520 Wisconsin Ave, Chevy Chase, MD 20815"
+  "infoWindow": "DoubleTree by Hilton Hotel <br> 8120 Wisconsin Ave, Bethesda, MD 20814"
 }, {
   "title": "Reception",
   "latitude": 38.983535,
@@ -26,10 +20,16 @@ var map_markers = [{
   "infoWindow": "Hilton Garden Inn Bethesda <br> 7301 Waverly St, Bethesda, MD 20814"
 }, {
   "title": "Reception",
-  "latitude": 38.998723,
-  "longitude": -77.027222,
+  "latitude": 38.9840851,
+  "longitude": -77.0967867,
   "icon": "fa-bed", //Check the full list of icons at http://fortawesome.github.io/Font-Awesome/icons/
-  "infoWindow": "Hampton Inn Silver Springs <br> 8728 Colesville Rd, Silver Spring, MD 20910"
+  "infoWindow": "Hyatt Regency Bethesda <br> 1 Bethesda Metro Center, Bethesda, MD 20814"
+}, {
+  "title": "Reception",
+  "latitude": 38.9831346,
+  "longitude": -77.0950057,
+  "icon": "fa-bed", //Check the full list of icons at http://fortawesome.github.io/Font-Awesome/icons/
+  "infoWindow": "Residence Inn Bethesda Downtown <br> 7335 Wisconsin Ave, Bethesda, MD 20814"
 }];
 
 // var map_markers = [
