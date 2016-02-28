@@ -21,3 +21,9 @@
 .hour {
   font-size: 34pt;
 }
+.roomblock {
+  color: #adb1b5;
+  font-size: 14px;
+  opacity: 0.9;
+  font-weight: 400;
+}

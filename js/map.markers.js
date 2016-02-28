@@ -29,7 +29,7 @@ var map_markers = [{
   "latitude": 38.9831346,
   "longitude": -77.0950057,
   "icon": "fa-bed", //Check the full list of icons at http://fortawesome.github.io/Font-Awesome/icons/
-  "infoWindow": "Residence Inn Bethesda Downtown <br> 7335 Wisconsin Ave, Bethesda, MD 20814"
+  "infoWindow": "Residence Inn Bethesda Downtown <strong><i>Room Block Available</i></strong> <br> 7335 Wisconsin Ave, Bethesda, MD 20814"
 }];
 
 // var map_markers = [
