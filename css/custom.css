@@ -27,3 +27,6 @@
   opacity: 1.0;
   font-weight: 800;
 }
+.roomblock a {
+  text-decoration: underline;
+}
